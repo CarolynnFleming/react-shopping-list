@@ -3,7 +3,9 @@ import { buyItem } from './services/fetch-utils';
 export default function ListItem({ fetchItems, listItem }) {
   async function handleClick() {
     // buy the item (in supabase)
+    await buyItem(id);
     // refetch the updated items array by calling the function passed in through props
+    await fetchItems();
   }
 
 //  () => {} is javascript for "do nothing". It's an arrow function that doesn't nothing at all.
