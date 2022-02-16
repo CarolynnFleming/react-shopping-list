@@ -14,7 +14,7 @@ import './App.css';
 
 export default function App() {
   // track the user in state
-
+const [user, setUser] = useState(localStorage.getItem('supabase.auth.token'));
   // add a useEffect to get the user and inject the user object into state on load
 
   async function handleLogout() {
