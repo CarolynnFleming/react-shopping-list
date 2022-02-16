@@ -5,6 +5,7 @@ import {
   Switch,
   Route,
   Redirect,
+  NavLink,
 } from 'react-router-dom';
 import AuthPage from './AuthPage';
 import { logout } from './services/fetch-utils';
@@ -35,6 +36,13 @@ export default function App() {
       <div className='App'>
         <header>
           {/* if there's a user, render a logout button here */}
+          {
+            user && 
+            <>
+              <NavLink to="/shopping-list">Shopping List</NavLink>
+              <button onClick={handleLogout}>Exit</button>
+            </>
+          }
         </header>
         <main>
           <Switch>
