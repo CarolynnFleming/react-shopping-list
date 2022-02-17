@@ -3,7 +3,9 @@ import { createListItem } from './services/fetch-utils';
 
 export default function ListItemForm({ fetchItems }) {
   // you'll need to track the name and quantity in state
-const name [name, ]
+  const [name, setName] = useState('');
+  const [quantity, setQuantity] = useState(1);
+
   async function handleSubmit(e) {
     e.preventDefault();
     
