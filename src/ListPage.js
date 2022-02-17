@@ -12,6 +12,9 @@ export default function ListPage() {
   }, []);
   async function fetchItems() {
     // fetch the list items and inject them into state
+    const listItemsResponse = getListItems();
+
+    setShoppingList(listItemsResponse);
   }
 
   async function handleDeleteClick() {
