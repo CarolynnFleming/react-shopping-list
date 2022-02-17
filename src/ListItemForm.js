@@ -10,6 +10,7 @@ export default function ListItemForm({ fetchItems }) {
     e.preventDefault();
     
     // make a new list item in supabase using the form values stored in state
+    
 
     // refetch the items using the handler functionpassed down as a prop
 
