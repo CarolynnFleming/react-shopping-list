@@ -24,7 +24,7 @@ export default function ListPage() {
     // then call your fetchItems function to fetch and re-display
     fetchItems();
   }
-
+  
   return (
     <div className="list-page">
       <button onClick={handleDeleteClick}>New List</button>
@@ -32,9 +32,8 @@ export default function ListPage() {
       <ListItemForm fetchItems={fetchItems} />
       <div className='item-list'>
         {/* map through all the list items and render them here */}
-        {listItems.map(listItem => <ListItem key={listItems.id} fetchItems={fetchItems} listItem={listItem} />)}
       </div>
-
+          
     </div>
   );
 }
