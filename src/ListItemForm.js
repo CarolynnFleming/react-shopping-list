@@ -22,14 +22,15 @@ export default function ListItemForm({ fetchItems }) {
   return (
     <div className='new-item-form-container'>
       {/* on submit, call the handleSubmit function */}
-      <form>
+      <form onSubmit={handleSubmit}>
           I need . . . 
         <label>
             Quantity
           {/* on change, update the quantity in state */}
           <input 
             // this should be a controlled input, soi set the value based on state
-            required 
+            required value={quantity}
+            onChange={e => setQuantity(e.target.value)}
             type="number" 
             name="quantity"
           />
@@ -39,7 +40,8 @@ export default function ListItemForm({ fetchItems }) {
           {/* on change, update the name in state */}
           <input
             // this should be a controlled input, soi set the value based on state 
-            required 
+            required value={name}
+            onChange={e => setName(e.target.value)}
             name="name" />
         </label>
         <button>Add item</button>
