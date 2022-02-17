@@ -32,6 +32,7 @@ export default function ListPage() {
       <ListItemForm fetchItems={fetchItems} />
       <div className='item-list'>
         {/* map through all the list items and render them here */}
+        <ListItem listItems={listItems} />
       </div>
           
     </div>
