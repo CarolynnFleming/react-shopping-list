@@ -12,18 +12,19 @@ export default function ListPage() {
   }, []);
   async function fetchItems() {
     // fetch the list items and inject them into state
-    const listItemsResponse = getListItems();
-
+    const listItemsResponse = await getListItems();
+   
     setShoppingList(listItemsResponse);
   }
 
   async function handleDeleteClick() {
     // delete all items
-    deleteAllItems();
+    await deleteAllItems();
 
     // then call your fetchItems function to fetch and re-display
-    fetchItems();
+    await fetchItems();
   }
+
   
   return (
     <div className="list-page">
@@ -32,7 +33,10 @@ export default function ListPage() {
       <ListItemForm fetchItems={fetchItems} />
       <div className='item-list'>
         {/* map through all the list items and render them here */}
-        <ListItem listItems={listItems} />
+        {listItems.map(listItem => 
+          <ListItem key={listItem.id}
+            fetchItems={fetchItems} 
+            listItem={listItem} />)}
       </div>
           
     </div>

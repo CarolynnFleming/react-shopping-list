@@ -5,12 +5,14 @@ export default function ListItemForm({ fetchItems }) {
   // you'll need to track the name and quantity in state
   const [name, setName] = useState('');
   const [quantity, setQuantity] = useState(1);
+  const has_been_bought = false;
 
   async function handleSubmit(e) {
     e.preventDefault();
     
     // make a new list item in supabase using the form values stored in state
-    await createListItem(name, quantity);
+    const ListItem = { quantity, name, has_been_bought };
+    await createListItem(ListItem);
 
     // refetch the items using the handler functionpassed down as a prop
     await fetchItems();
